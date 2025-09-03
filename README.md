@@ -23,14 +23,17 @@ guardrails for prompt safety, and a simple frontend UI for experimentation.
 
 ```
 ai-miniapp/
-├─ app/                     # Next.js App Router pages
-│  ├─ page.tsx              # Home
-│  ├─ api/ai/route.ts       # AI endpoint (proxy to provider)
-│  └─ demos/                # Example UIs
-├─ components/              # UI components
-├─ lib/                     # AI helpers (prompt builder, validation)
-├─ public/                  # static assets
-├─ styles/                  # Tailwind styles
+├─ src/
+│  ├─ app/                  # Next.js App Router pages
+│  │  ├─ page.tsx           # Home
+│  │  ├─ layout.tsx         # Root layout
+│  │  ├─ api/ai/route.ts    # AI endpoint (proxy to provider)
+│  │  └─ demos/             # Example UIs
+│  ├─ components/           # UI components
+│  ├─ lib/                  # AI helpers (prompt builder, validation)
+│  ├─ styles/               # Tailwind styles
+│  └─ public/               # static assets
+├─ test/                    # tests
 ├─ package.json
 └─ README.md
 ```
