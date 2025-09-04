@@ -4,6 +4,10 @@ An experimental project showcasing integration of **AI capabilities** into a mod
 Built with **Next.js** and **TypeScript**, it provides a minimal API layer to interact with an AI provider (e.g., OpenAI), 
 guardrails for prompt safety, and a simple frontend UI for experimentation.
 
+## 🌐 Live Demo
+
+- [AI Miniapp (experimental)](https://ai-miniapp-gilt.vercel.app/)
+
 ---
 
 ## 🚀 Tech Stack
