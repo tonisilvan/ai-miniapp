@@ -7,21 +7,16 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
-type Meta = {
-  tokens?: number
-  usd?: number
-  model?: string
-  ms?: number
-}
+type Meta = { tokens?: number; usd?: number; model?: string; ms?: number }
 
-export default function Page() {
+export default function HomeClient() {
   const searchParams = useSearchParams()
   const [prompt, setPrompt] = useState("")
   const [answer, setAnswer] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [meta, setMeta] = useState<Meta | null>(null)
 
-  // ✅ initialize prompt from ?preset if present
+  // Initialize from ?preset=
   useEffect(() => {
     const preset = searchParams.get("preset")
     if (preset) setPrompt(preset)

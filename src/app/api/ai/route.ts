@@ -15,6 +15,7 @@ export async function POST(req: NextRequest) {
       maxTokens: Number(json?.maxTokens) || 200,
       temperature: typeof json?.temperature === "number" ? json.temperature : 0.7,
     })
+
     if (!parsed.success) {
       return Response.json(
         { error: parsed.error.issues[0]?.message ?? "Invalid payload" },
@@ -46,10 +47,8 @@ if (!result.ok) {
       model: result.data.model,
       latencyMs,
     })
-  } catch (e: any) {
-    return Response.json(
-      { error: e?.message ?? "Unknown error" },
-      { status: 500 }
-    )
-}
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "Unknown error"
+    return Response.json({ error: message }, { status: 500 })
+  }
 }
